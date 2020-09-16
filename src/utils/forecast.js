@@ -21,7 +21,7 @@ const forecast = (latitude,longitude,callback)=>{
             callback('unable to find the location. Please enter the valid co-ordinates',undefined)
 
         }else{
-            callback(undefined,body.current.weather_descriptions[0]+'. It is currently '+ body.current.temperature + ' degrees Out.'+ ' it feels like '+ body.current.feelslike+ ' degrees out.'
+            callback(undefined,body.current.weather_descriptions[0]+'. It is currently '+ body.current.temperature + ' degrees Out.'+ ' it feels like '+ body.current.feelslike+ ' degrees out.' + ' The Humidity is '+body.current.humidity 
 
             )
         }
