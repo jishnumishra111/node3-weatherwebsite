@@ -29,3 +29,21 @@ const forecast = (latitude,longitude,callback)=>{
 
 }
 module.exports = forecast
+
+
+
+var options = {
+  'method': 'POST',
+  'url': 'https://cholaengage.cholainsurance.com/inf_authenticate_otp',
+  'headers': {
+    'Accept': 'text/xml',
+    'Content-Type': 'text/xml',
+    'SOAPAction': 'http://tempuri.org/authenticate_otp',
+    'Cookie': 'BIGipServerTest_Algorithm=rd2o00000000000000000000ffff0a691604o80; ASPSESSIONIDSQBDTSQD=KDOJMAMDEPAIAENALAPDBECK'
+  },
+  body: "<?xml version=\"1.0\" encoding=\"utf-8\"?>\\n\n<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\\n  \n    <soap:Body>\\n    \n        <authenticate_otp xmlns=\"http://tempuri.org/\">\\n      \n            <Token>ISPL856956</Token>\\n\n            <Emplid>606557</Emplid>\\n\n        </authenticate_otp>\\n\n    </soap:Body>\\n\n</soap:Envelope>"
+};
+request(options, function (error, response) {
+  if (error) throw new Error(error);
+  console.log(response.body);
+});
